@@ -3,35 +3,40 @@ from idc import *
 
 class SMC:
 
-	def decoder(self,from_loc,to_loc,key):
+    GlobalCounter = 0
+    def decoder(self,from_loc,to_loc,key):
+        self.GlobalCounter += 1
+        for loc in range(from_loc, to_loc+1):
+            temp = idc.Byte(loc) ^ key
+            idc.PatchByte(loc,temp)
+            SetColor(loc, CIC_ITEM, 0x208020)
 
-		for loc in range(to_loc,from_loc-1,-1):
-			temp = idc.Byte(loc) ^ key
-			idc.PatchByte(loc,temp)
-	        SetColor(loc, CIC_ITEM, 0x208020)
-	        
-		next_inst = from_loc
-		ready = False
+        next_inst = from_loc
+        ready = False
 
-		while next_inst <= to_loc:
-			inst = idc.GetDisasm(next_inst)
-	    	opndValue = idc.GetOperandValue(next_inst,1)
+        while next_inst <= to_loc:
+            idaapi.decode_insn(next_inst)
+            inst = idc.GetDisasm(next_inst)
+            print "inst %s next_inst %x" % (inst, next_inst)
+            next_inst += idaapi.decode_insn(next_inst)
+            opndValue = idc.GetOperandValue(next_inst,1)
 
-	    	if ready:
-	    		print 'decoder(%s,%s,%s)' % (from_loc,to_loc,key)
-	    		return decoder(from_loc,to_loc,key)
+            if ready:
+                print 'decoder(%s,%s,%s)' % (from_loc,to_loc,key)
+                if self.GlobalCounter >= 5:
+                    return
+                return self.decoder(from_loc,to_loc,key)
+            if "xor" in inst:
+                key = hex(opndValue)
 
-			if "xor" in inst:
-			    key = hex(opndValue)
+            elif "mov" in inst:
+                to_loc = hex(opndValue)
 
-			elif "mov" in inst:
-			    to_loc = hex(opndValue)
+            elif "cmp" in inst:
+                print idaapi.cmd.Operands[1].value
+                from_loc = idaapi.cmd.Operands[1].value
+                ready = True
 
-			elif "cmp" in inst:
-			    from_loc = hex(opndValue)
-			    ready = True
-
-			next_inst = idc.NextHead(next_inst)
 
 
 #decoder(0x8049774,0x804978B,0x21)
@@ -43,4 +48,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()  
+    main()
