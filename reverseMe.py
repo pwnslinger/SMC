@@ -13,6 +13,7 @@ class SMC:
 
         next_inst = from_loc
         ready = False
+        xor_check = False
 
         while next_inst <= to_loc:
         
@@ -22,10 +23,10 @@ class SMC:
             idc.MakeCode(next_inst)
             idaapi.decode_insn(next_inst)
             inst = idc.GetDisasm(next_inst)
-            #print "inst %s next_inst %x" % (inst, next_inst)
+            print "inst %s next_inst %x" % (inst, next_inst)
             opndValue = idc.GetOperandValue(next_inst,1)
 
-            if ready:
+            if ready and xor_check:
                 print 'decoder({0:x},{1:x},{2:x})'.format(from_loc,to_loc,key)
                 if self.GlobalCounter >= 10:
                     print "5 rounds has been executed..."
@@ -35,6 +36,7 @@ class SMC:
             if "xor" in inst:
                 #key = hex(opndValue)
                 #print idaapi.cmd.Operands[1].value
+                xor_check = True
                 key = idaapi.cmd.Operands[1].value
                 
             elif "mov" in inst:
@@ -50,6 +52,8 @@ class SMC:
                 
             #next_inst = idc.NextHead(next_inst)
             next_inst += idaapi.decode_insn(next_inst)
+            
+        print "out of loop"
 
 #decoder(0x8049774,0x804978B,0x18)
 #decoder(0x8049774,0x804978B,0x21)
