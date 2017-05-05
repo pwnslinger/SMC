@@ -15,31 +15,45 @@ class SMC:
         ready = False
 
         while next_inst <= to_loc:
+        
+            if next_inst > to_loc:
+                return
+                
+            idc.MakeCode(next_inst)
             idaapi.decode_insn(next_inst)
             inst = idc.GetDisasm(next_inst)
-            print "inst %s next_inst %x" % (inst, next_inst)
-            next_inst += idaapi.decode_insn(next_inst)
+            #print "inst %s next_inst %x" % (inst, next_inst)
             opndValue = idc.GetOperandValue(next_inst,1)
 
             if ready:
-                print 'decoder(%s,%s,%s)' % (from_loc,to_loc,key)
-                if self.GlobalCounter >= 5:
+                print 'decoder({0:x},{1:x},{2:x})'.format(from_loc,to_loc,key)
+                if self.GlobalCounter >= 10:
+                    print "5 rounds has been executed..."
                     return
                 return self.decoder(from_loc,to_loc,key)
+                
             if "xor" in inst:
-                key = hex(opndValue)
-
+                #key = hex(opndValue)
+                #print idaapi.cmd.Operands[1].value
+                key = idaapi.cmd.Operands[1].value
+                
             elif "mov" in inst:
-                to_loc = hex(opndValue)
+                #to_loc = hex(opndValue)
+                #print idaapi.cmd.Operands[1].value
+                to_loc = idaapi.cmd.Operands[1].value
 
-            elif "cmp" in inst:
-                print idaapi.cmd.Operands[1].value
+            #elif "cmp" in inst:
+            elif format(idaapi.get_byte(next_inst),'x') == "81":
+                #print idaapi.cmd.Operands[1].value
                 from_loc = idaapi.cmd.Operands[1].value
                 ready = True
+                
+            #next_inst = idc.NextHead(next_inst)
+            next_inst += idaapi.decode_insn(next_inst)
 
-
-
+#decoder(0x8049774,0x804978B,0x18)
 #decoder(0x8049774,0x804978B,0x21)
+#decoder(0x804A025,0x804A03C,0x9b)
 #decoder(0x804A025,0x804A03C,0x8e)
 
 def main():
@@ -49,3 +63,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+'''
+decoder(8048e91,8048ea8,18)
+decoder(8048f0e,8048f25,21)
+decoder(8049774,804978b,9b)
+decoder(804a025,804978b,9b) --> ?? should be 0x8e
+'''
