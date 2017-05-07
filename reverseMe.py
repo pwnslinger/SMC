@@ -4,6 +4,20 @@ from idc import *
 class SMC:
 
     GlobalCounter = 0
+    
+    def make_uknown():
+    
+        for seg in Segments():
+	   if idc.SegName(seg) == '.text':
+	       start = idc.SegStart(seg)
+	       end = idc.SegEnd(seg)
+	       
+	       while start < end:
+	           i=idautils.DecodeInstruction(start)
+	           if i.Op1.dtyp == FF_DWRD:
+	               idc.MakeUnkn(start,DOUNK_SIMPLE)
+	           start = NextHead(start)
+    
     def decoder(self,from_loc,to_loc,key):
         self.GlobalCounter += 1
         for loc in range(from_loc, to_loc+1):
@@ -14,12 +28,14 @@ class SMC:
         next_inst = from_loc
         ready = False
         xor_check = False
+        jmp_dword = False
 
         while next_inst <= to_loc:
         
             if next_inst > to_loc:
                 return
                 
+            #idc.MakeUnkn(next_inst,DOUNK_SIMPLE)
             idc.MakeCode(next_inst)
             idaapi.decode_insn(next_inst)
             inst = idc.GetDisasm(next_inst)
@@ -27,6 +43,7 @@ class SMC:
             opndValue = idc.GetOperandValue(next_inst,1)
 
             if ready and xor_check:
+            
                 print 'decoder({0:x},{1:x},{2:x})'.format(from_loc,to_loc,key)
                 if self.GlobalCounter >= 10:
                     print "5 rounds has been executed..."
@@ -43,7 +60,7 @@ class SMC:
                 #to_loc = hex(opndValue)
                 #print idaapi.cmd.Operands[1].value
                 to_loc = idaapi.cmd.Operands[1].value
-
+               
             #elif "cmp" in inst:
             elif format(idaapi.get_byte(next_inst),'x') == "81":
                 #print idaapi.cmd.Operands[1].value
@@ -62,6 +79,7 @@ class SMC:
 
 def main():
 	smc = SMC()
+	smc.make_unknown()
 	smc.decoder(0x8048A45,0x8048A5C,0x0BC)
 
 
