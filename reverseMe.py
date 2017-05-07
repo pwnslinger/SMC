@@ -30,18 +30,16 @@ class SMC:
         xor_check = False
         jmp_dword = False
         
-        self.make_unknown()        
+        #self.make_unknown()        
+        #print "---> %s" % to_loc
         
-        while next_inst <= to_loc:
-        
-            if next_inst > to_loc:
-                return
-                
+        while True:
+ 
             #idc.MakeUnkn(next_inst,DOUNK_SIMPLE)
             idc.MakeCode(next_inst)
             idaapi.decode_insn(next_inst)
             inst = idc.GetDisasm(next_inst)
-            print "inst %s next_inst %x" % (inst, next_inst)
+            #print "inst %s next_inst %x" % (inst, next_inst)
             opndValue = idc.GetOperandValue(next_inst,1)
 
             if ready and xor_check and jmp_dword:
@@ -70,16 +68,18 @@ class SMC:
                 ready = True
                 
             #elif "jmp" in inst:
-            elif format(idaapi.get_byte(next_inst),'x') == "e9":
+            elif format(idaapi.get_byte(next_inst),'x') == "e9" or "jmp" in inst:
                 jmp_dword = True
-                if idaapi.cmd.Operands[0].type == o_near:
+                if idaapi.cmd.Operands[0].type == o_near and "dword" in GetOpnd(next_inst,0):
                     offset = int(idaapi.tag_remove(idaapi.ua_outop2(next_inst, 0))[24:-1],16)
                     address = GetOperandValue(next_inst,0)
                     dword_adr = address - offset
                     idc.MakeUnkn(dword_adr,DOUNK_SIMPLE)
+                    idc.MakeCode(address)
                 
                 
             #next_inst = idc.NextHead(next_inst)
+            #print idaapi.decode_insn(next_inst)
             next_inst += idaapi.decode_insn(next_inst)
             
         print "out of loop"
