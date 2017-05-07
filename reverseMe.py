@@ -1,9 +1,11 @@
 import idaapi
 from idc import *
+import binascii
 
 class SMC:
 
     GlobalCounter = 0
+    flag = []
 	
     def make_unknown(self):
         for seg in Segments():
@@ -43,13 +45,14 @@ class SMC:
             opndValue = idc.GetOperandValue(next_inst,1)
 
             if ready and xor_check and jmp_dword:
-            
+                self.flag.append(format(key,'x'))
                 print '[{0:d}] decoder({1:x},{2:x},{3:x})'.format(self.GlobalCounter,from_loc,to_loc,key)
-                '''
-                if self.GlobalCounter >= 10:
-                    print "5 rounds has been executed..."
+                
+                
+                if self.GlobalCounter >= 54:
+                    print ''.join([chr(int(i,16)) for i in self.flag]).strip()
                     return
-                '''
+
                 
                 return self.decoder(from_loc,to_loc,key)
                 
