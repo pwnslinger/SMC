@@ -5,8 +5,7 @@ class SMC:
 
     GlobalCounter = 0
     
-    def make_uknown():
-    
+    def make_unknown(self):
         for seg in Segments():
 	   if idc.SegName(seg) == '.text':
 	       start = idc.SegStart(seg)
@@ -15,6 +14,7 @@ class SMC:
 	       while start < end:
 	           i=idautils.DecodeInstruction(start)
 	           if i.Op1.dtyp == FF_DWRD:
+	               print "Found an dword_XXX shit!"
 	               idc.MakeUnkn(start,DOUNK_SIMPLE)
 	           start = NextHead(start)
     
@@ -29,7 +29,9 @@ class SMC:
         ready = False
         xor_check = False
         jmp_dword = False
-
+        
+        self.make_unknown()        
+        
         while next_inst <= to_loc:
         
             if next_inst > to_loc:
@@ -42,7 +44,7 @@ class SMC:
             print "inst %s next_inst %x" % (inst, next_inst)
             opndValue = idc.GetOperandValue(next_inst,1)
 
-            if ready and xor_check:
+            if ready and xor_check and jmp_dword:
             
                 print 'decoder({0:x},{1:x},{2:x})'.format(from_loc,to_loc,key)
                 if self.GlobalCounter >= 10:
@@ -67,6 +69,14 @@ class SMC:
                 from_loc = idaapi.cmd.Operands[1].value
                 ready = True
                 
+            elif "jmp" in inst and idaapi.cmd.Operands[0].type == o_near:
+                jmp_dword = True
+                offset = int(idaapi.tag_remove(idaapi.ua_outop2(next_inst, 0))[24:-1],16)
+                address = GetOperandValue(next_inst,0)
+                dword_adr = address - offset
+                idc.MakeUnkn(dword_adr,DOUNK_SIMPLE)
+                
+                
             #next_inst = idc.NextHead(next_inst)
             next_inst += idaapi.decode_insn(next_inst)
             
@@ -79,7 +89,8 @@ class SMC:
 
 def main():
 	smc = SMC()
-	smc.make_unknown()
+	
+	#smc.make_unknown()
 	smc.decoder(0x8048A45,0x8048A5C,0x0BC)
 
 
