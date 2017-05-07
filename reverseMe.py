@@ -69,12 +69,14 @@ class SMC:
                 from_loc = idaapi.cmd.Operands[1].value
                 ready = True
                 
-            elif "jmp" in inst and idaapi.cmd.Operands[0].type == o_near:
+            #elif "jmp" in inst:
+            elif format(idaapi.get_byte(next_inst),'x') == "e9":
                 jmp_dword = True
-                offset = int(idaapi.tag_remove(idaapi.ua_outop2(next_inst, 0))[24:-1],16)
-                address = GetOperandValue(next_inst,0)
-                dword_adr = address - offset
-                idc.MakeUnkn(dword_adr,DOUNK_SIMPLE)
+                if idaapi.cmd.Operands[0].type == o_near:
+                    offset = int(idaapi.tag_remove(idaapi.ua_outop2(next_inst, 0))[24:-1],16)
+                    address = GetOperandValue(next_inst,0)
+                    dword_adr = address - offset
+                    idc.MakeUnkn(dword_adr,DOUNK_SIMPLE)
                 
                 
             #next_inst = idc.NextHead(next_inst)
