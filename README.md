@@ -65,7 +65,7 @@ As you can see, there are some repetitive XoRs BBs in code:
 ![before unpack](https://raw.githubusercontent.com/pwnslinger/SMC/master/Before_unpack.PNG)
 
 
-![before unpack Graph View] (https://raw.githubusercontent.com/pwnslinger/SMC/master/GView_before_unpack.PNG)
+![before unpack Graph View](https://raw.githubusercontent.com/pwnslinger/SMC/master/GView_before_unpack.PNG)
 
 
-![before unpack Graph View] (https://raw.githubusercontent.com/pwnslinger/SMC/master/Gview_after-unpack.PNG)
+![before unpack Graph View](https://raw.githubusercontent.com/pwnslinger/SMC/master/Gview_after-unpack.PNG)
