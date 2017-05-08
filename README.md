@@ -1,6 +1,7 @@
 # SMC
 Self-modifying Code de-obfuscation
 
+```
 [1] decoder(8048e91,8048ea8,18)
 [2] decoder(8048f0e,8048f25,21)
 [3] decoder(8049774,804978b,9b)
@@ -55,3 +56,16 @@ Self-modifying Code de-obfuscation
 [52] decoder(8048aa9,8048ac0,ab)
 [53] decoder(8049b5c,8049b73,98)
 [54] decoder(804b2f0,804b307,42)
+```
+
+
+As you can see, there are some repetitive XoRs BBs in code:
+
+
+![before unpack](https://raw.githubusercontent.com/pwnslinger/SMC/master/Before_unpack.PNG)
+
+
+![before unpack Graph View] (https://raw.githubusercontent.com/pwnslinger/SMC/master/GView_before_unpack.PNG)
+
+
+![before unpack Graph View] (https://raw.githubusercontent.com/pwnslinger/SMC/master/Gview_after-unpack.PNG)
