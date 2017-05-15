@@ -122,3 +122,8 @@ Blocks in the code that I have missed the general pattern were as follow:
 [3] Finally we stopped in this place :D
 
 ![Stop place](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/INT_0x80.PNG)
+
+
+**Our next goal is to remove bogus/junk code
+
+![repititive pattern in graph](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/AsmCFG_repititive_pattern.PNG)
