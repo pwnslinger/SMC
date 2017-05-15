@@ -21,6 +21,13 @@ def dump(jitter):
 	open('dump.bin', 'wb').write(dump_data)
 	return False
 
+#Continue execution from the place occured
+def cont_exec(jitter):
+	sb.jitter.cpu.EAX = 0x1337
+	#make ineffective exception (reset)
+	sb.jitter.cpu.set_exception(0)
+	return True
+
 sb.jitter.add_exception_handler(EXCEPT_INT_XX,dump)
 
 # Run
