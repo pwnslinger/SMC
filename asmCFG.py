@@ -1,6 +1,7 @@
 import os
 from miasm2.analysis.binary import Container
 from miasm2.analysis.machine import Machine
+from miasm2.core.graph import DiGraphSimplifier, MatchGraphJoker
 
 container = Container.from_stream(open('dump.bin'))
 bin_stream = container.bin_stream
@@ -15,8 +16,52 @@ mdis = machine.dis_engine(bin_stream)
 #https://github.com/cea-sec/miasm/pull/309
 blocks = mdis.dis_multibloc(container.entry_point)
 
-open('AsmCFG.dot','w+').write(blocks.dot())
+#open('AsmCFG.dot','w+').write(blocks.dot())
 
+
+'''
 for head in blocks.heads():
 	for child in blocks.reachable_sons(head):
 		print child
+
+'''
+
+filter_block = lambda block: (len(block.lines)==2 and \
+							block.lines[0].name == 'PUSH' and \
+							block.lines[1].name == 'MOV')
+
+#parent joker node for the first block in MatchGraph / defining a filter for 
+#first two consecutive lines in  block.lines[i].name (PUSH,MOV)
+
+parent = MatchGraphJoker(restrict_in=False, filt=filter_block, name='root')
+
+middle = MatchGraphJoker(filt=lambda block: (block.lines[0].name == 'XOR'), name='middle')
+
+last = MatchGraphJoker(restrict_out=False, name='end')
+
+# MatchGraph with a loop on middle joker node
+expgraph = parent >> middle >> last
+expgraph += middle >> middle
+
+#open('MatchGraphJoker.dot','w').write(expgraph.dot())
+
+def pass_remove_junkcode(dgs,graph):
+
+	for block in expgraph.match(graph):
+
+		#connect each predesseccor of MatchGraph to its equivalent successor in AsmGraph
+		for pred in graph.predecessors(block[parent]):
+			for succ in graph.successors(block[last]):
+				#graph.add_edge(pred,succ,graph.edges2constraint[(block[last],succ)])
+				graph.add_edge(pred,succ,graph.edges2constraint[(pred,block[parent])])
+
+		#removing junk codes between block[parent] -> block[last]
+		for joker , node in block.iteritems():
+			graph.del_node(node)
+
+
+dgs = DiGraphSimplifier()
+dgs.enable_passes([pass_remove_junkcode])
+new_graph = dgs.apply_simp(blocks)
+
+open('JunkRemoved.dot','w').write(new_graph.dot())

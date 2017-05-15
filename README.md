@@ -127,3 +127,12 @@ Blocks in the code that I have missed the general pattern were as follow:
 **Our next goal is to remove bogus/junk code
 
 ![repititive pattern in graph](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/AsmCFG_repititive_pattern.PNG)
+
+[*] At first we've made a MatchGraphJoker so as to be a representative of the detected pattern
+
+![joker pattern](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/joker.png)
+
+[*] finally we can reach to this graph which we've remove junk codes by making edges between the predecessors of parent AsmCfG matched pattern to the successors of AsmCfG tails matched pattern.
+
+![junk code removed](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/junk_removed.png)
+

@@ -1,0 +1,11 @@
+digraph asm_graph {
+8759072068313 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td align="left">Joker root (In:*)</td></tr></table>> ];
+8759072042141 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td align="left">Joker end (Out:*)</td></tr></table>> ];
+8759072042137 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td align="left">Joker middle </td></tr></table>> ];
+8759072068313 -> 8759072042137[];
+8759072042137 -> 8759072042141[];
+8759072042137 -> 8759072042137[];
+}

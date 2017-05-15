@@ -1,0 +1,53 @@
+digraph asm_graph {
+8782074554465 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1F0</td></tr><tr><td align="left">MOV        EBX, 0x1</td></tr><tr><td align="left">MOV        EAX, 0x4</td></tr><tr><td align="left">INT        0x80</td></tr></table>> ];
+8782074592117 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080486DD</td></tr><tr><td align="left">POP        EBX</td></tr></table>> ];
+8782074554597 [
+shape="Mrecord" style="filled" fontname="Courier New" fillcolor="red"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804A7F5</td></tr><tr><td align="left">Unable to disassemble</td></tr></table>> ];
+8782074592005 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804907E</td></tr><tr><td align="left">POP        EDX</td></tr><tr><td align="left">JMP        loc_00000000080486DA:0x080486da</td></tr></table>> ];
+8782074582341 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2FA</td></tr><tr><td align="left">POP        EBX</td></tr><tr><td align="left">POP        EBX</td></tr><tr><td align="left">MOV        ECX, 0x0</td></tr><tr><td align="left">MOV        EAX, 0x0</td></tr><tr><td align="left">JMP        loc_000000000804AC5A:0x0804ac5a</td></tr></table>> ];
+8782074586737 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049054</td></tr><tr><td align="left">TEST       AL, 0x9C</td></tr><tr><td align="left">MOV        CL, 0x16</td></tr><tr><td align="left">SBB        DL, BYTE PTR [EDX+0x9358C020]</td></tr><tr><td align="left">CALL       loc_00000000221B41C8:0x221b41c8</td></tr></table>> ];
+8782074586665 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080490B9</td></tr><tr><td align="left">MOV        EBP, 0xA1292588</td></tr><tr><td align="left">ADC        EBX, DWORD PTR [EBX+0xA4DBA06B]</td></tr><tr><td align="left">MOV        BYTE PTR [0x7BD55229], AH</td></tr><tr><td align="left">ENTER      0x3997, 0x21</td></tr><tr><td align="left">AND        DWORD PTR [EAX+0x6B6C40A8], EDX</td></tr></table>> ];
+8782074586825 [
+shape="Mrecord" style="filled" fontname="Courier New" fillcolor="red"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080490D4</td></tr><tr><td align="left">Unable to disassemble</td></tr></table>> ];
+8782074554509 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1FC</td></tr><tr><td align="left">JMP        loc_000000000804AE67:0x0804ae67</td></tr></table>> ];
+8782074582289 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2F0</td></tr><tr><td align="left">POP        EAX</td></tr><tr><td align="left">CMP        EAX, 0x2</td></tr><tr><td align="left">JNZ        loc_0000000008049454:0x08049454</td></tr></table>> ];
+8782074586821 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049063</td></tr><tr><td align="left">POPAD      </td></tr><tr><td align="left">OUT        0x48, AL</td></tr><tr><td align="left">STI        </td></tr><tr><td align="left">PUSH       DS</td></tr><tr><td align="left">ADD        DWORD PTR [EDX], EDX</td></tr><tr><td align="left">ADC        DL, BYTE PTR [EAX+0x86F1BA52]</td></tr><tr><td align="left">ADD        AL, 0x8</td></tr></table>> ];
+8782074568565 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B110</td></tr><tr><td align="left">MOV        EDX, 0x7</td></tr><tr><td align="left">MOV        ECX, 0x804B31E</td></tr><tr><td align="left">JMP        loc_000000000804A908:0x0804a908</td></tr></table>> ];
+8782074592201 [
+shape="Mrecord" style="filled" fontname="Courier New" fillcolor="red"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080486DE</td></tr><tr><td align="left">Unable to disassemble</td></tr></table>> ];
+8782074592153 [
+shape="Mrecord" style="filled" fontname="Courier New" fillcolor="red"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804865E</td></tr><tr><td align="left">Unable to disassemble</td></tr></table>> ];
+8782074558713 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049072</td></tr><tr><td align="left">XOR        BYTE PTR [EDX], 0xC0</td></tr><tr><td align="left">DEC        EDX</td></tr><tr><td align="left">CMP        EDX, 0x80486DA</td></tr><tr><td align="left">JAE        loc_0000000008049072:0x08049072</td></tr></table>> ];
+8782074592081 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080486DA</td></tr><tr><td align="left">XCHG       EAX, EDX</td></tr><tr><td align="left">JPE        loc_000000000804865E:0x0804865e</td></tr></table>> ];
+8782074586629 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080490B7</td></tr><tr><td align="left">JAE        loc_0000000008049054:0x08049054</td></tr></table>> ];
+8782074586629 -> 8782074586665[color="red"];
+8782074554465 -> 8782074554509[color="blue"];
+8782074586629 -> 8782074586737[color="limegreen"];
+8782074582289 -> 8782074568565[color="limegreen"];
+8782074568565 -> 8782074554465[color="blue"];
+8782074586737 -> 8782074586821[color="blue"];
+8782074586665 -> 8782074586825[color="blue"];
+8782074554509 -> 8782074554597[color="blue"];
+8782074592005 -> 8782074592081[color="blue"];
+8782074592081 -> 8782074592117[color="red"];
+8782074592117 -> 8782074592201[color="blue"];
+8782074582289 -> 8782074582341[color="red"];
+8782074582341 -> 8782074586629[color="blue"];
+8782074592081 -> 8782074592153[color="limegreen"];
+8782074586821 -> 8782074558713[color="blue"];
+8782074558713 -> 8782074592005[color="red"];
+8782074558713 -> 8782074558713[color="limegreen"];
+}
