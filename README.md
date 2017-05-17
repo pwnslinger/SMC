@@ -136,3 +136,16 @@ Blocks in the code that I have missed the general pattern were as follow:
 
 ![junk code removed](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/junk_removed.png)
 
+**Generated CFG with fuzzing implementation in unpackMe.py file using simple MEMORY_ACCESS_VIOLATION handling by exploiting a dichotomy searchalgorithm like binary search :P / Actually, my goal was to somehow deducing input size by handling this exception as a constraint (next goal will be using SAT solver)
+
+![junk code removed](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/JunkRemoved_dump2.png)
+
+[*]Again using our AsmCFG simplifier but this this because of this we shouldset False restrict_in edges to middle node as well
+
+![junk code removed](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/middle_restrict_in.png)
+
+And Finally we've got this CFG which is so simplified :D
+
+![junk code removed](https://raw.githubusercontent.com/pwnslinger/SMC/master/res/JunkRemoved_middle_restrictin_dump2.png)
+
+flag is: Alph4t3stf0rc3mille!!!!!!!!!

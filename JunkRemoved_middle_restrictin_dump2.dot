@@ -1,0 +1,128 @@
+digraph asm_graph {
+8772607229321 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B256</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x33</td></tr><tr><td align="left">JMP        loc_0000000008049535:0x08049535</td></tr></table>> ];
+8772607092609 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B183</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_00000000080499E5:0x080499e5</td></tr></table>> ];
+8772607421573 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B224</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x72</td></tr><tr><td align="left">JMP        loc_000000000804949F:0x0804949f</td></tr></table>> ];
+8772607452809 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_00000000080491B5</td></tr><tr><td align="left">ADD        AL, 0x8</td></tr></table>> ];
+8772607434893 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B22E</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x30</td></tr><tr><td align="left">JMP        loc_000000000804A00C:0x0804a00c</td></tr></table>> ];
+8772607452717 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049215</td></tr><tr><td align="left">INC        EDI</td></tr><tr><td align="left">SCASD      </td></tr><tr><td align="left">JA         loc_00000000080491B5:0x080491b5</td></tr></table>> ];
+8772607338769 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1D3</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x6D</td></tr><tr><td align="left">JMP        loc_00000000080496AC:0x080496ac</td></tr></table>> ];
+8772607256089 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B260</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x74</td></tr><tr><td align="left">JMP        loc_000000000804A827:0x0804a827</td></tr></table>> ];
+8772607074841 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B179</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804A921:0x0804a921</td></tr></table>> ];
+8772607315453 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B286</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x68</td></tr><tr><td align="left">JMP        loc_0000000008049661:0x08049661</td></tr></table>> ];
+8772606978205 [
+shape="Mrecord" style="filled" fontname="Courier New" fillcolor="red"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804A7F5</td></tr><tr><td align="left">Unable to disassemble</td></tr></table>> ];
+8772607128837 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B197</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804833D:0x0804833d</td></tr></table>> ];
+8772607169945 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B24C</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x73</td></tr><tr><td align="left">JMP        loc_000000000804A3A9:0x0804a3a9</td></tr></table>> ];
+8772606978081 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1F0</td></tr><tr><td align="left">MOV        EBX, 0x1</td></tr><tr><td align="left">MOV        EAX, 0x4</td></tr><tr><td align="left">INT        0x80</td></tr></table>> ];
+8772607010341 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2D3</td></tr><tr><td align="left">JMP        loc_000000000804A7C3:0x0804a7c3</td></tr></table>> ];
+8772607005353 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2C0</td></tr><tr><td align="left">INC        ECX</td></tr></table>> ];
+8772607142701 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B242</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x74</td></tr><tr><td align="left">JMP        loc_00000000080499CC:0x080499cc</td></tr></table>> ];
+8772607261277 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1BF</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x6C</td></tr><tr><td align="left">JMP        loc_00000000080488B5:0x080488b5</td></tr></table>> ];
+8772607128977 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B238</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x66</td></tr><tr><td align="left">JMP        loc_0000000008048C52:0x08048c52</td></tr></table>> ];
+8772607083269 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B16F</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804A458:0x0804a458</td></tr></table>> ];
+8772607292981 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B27C</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x34</td></tr><tr><td align="left">JMP        loc_0000000008049A62:0x08049a62</td></tr></table>> ];
+8772607412169 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2A4</td></tr><tr><td align="left">NOP        </td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x41</td></tr><tr><td align="left">JMP        loc_0000000008049486:0x08049486</td></tr></table>> ];
+8772607398329 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B29A</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x6C</td></tr><tr><td align="left">JMP        loc_000000000804AEB2:0x0804aeb2</td></tr></table>> ];
+8772607311805 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1C9</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x69</td></tr><tr><td align="left">JMP        loc_000000000804AE4E:0x0804ae4e</td></tr></table>> ];
+8772606978121 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1FC</td></tr><tr><td align="left">JMP        loc_000000000804AE67:0x0804ae67</td></tr></table>> ];
+8772607452805 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049219</td></tr><tr><td align="left">ADC        DWORD PTR [0x5F002795], EBX</td></tr><tr><td align="left">XCHG       EAX, ESP</td></tr><tr><td align="left">OUT        EDX, EAX</td></tr><tr><td align="left">POP        ESI</td></tr><tr><td align="left">PUSHFD     </td></tr><tr><td align="left">ADC        DWORD PTR [0xFC4FE166], EBX</td></tr><tr><td align="left">OR         ESP, EDX</td></tr><tr><td align="left">JMP        0xA618:0xBA5290EA</td></tr></table>> ];
+8772607115985 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B18D</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804A5B6:0x0804a5b6</td></tr></table>> ];
+8772607065113 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B165</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804A138:0x0804a138</td></tr></table>> ];
+8772606992213 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2B0</td></tr><tr><td align="left">MOV        EDX, 0x7</td></tr><tr><td align="left">MOV        ECX, 0x804B317</td></tr><tr><td align="left">JMP        loc_000000000804A908:0x0804a908</td></tr></table>> ];
+8772606957641 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2C1</td></tr><tr><td align="left">MOV        AL, BYTE PTR [EBX+ECX]</td></tr><tr><td align="left">CMP        EAX, 0x0</td></tr><tr><td align="left">JNZ        loc_000000000804AB15:0x0804ab15</td></tr></table>> ];
+8772607156069 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1A1</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_00000000080494D1:0x080494d1</td></tr></table>> ];
+8772607210717 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1AB</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x65</td></tr><tr><td align="left">JMP        loc_000000000804951C:0x0804951c</td></tr></table>> ];
+8772607046501 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B15B</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_000000000804A313:0x0804a313</td></tr></table>> ];
+8772607010529 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_0000000008049CEC</td></tr><tr><td align="left">MOV        DWORD PTR FS:[ECX+0xFFFFFFAF], CS</td></tr><tr><td align="left">XOR        BH, BYTE PTR [ESI]</td></tr><tr><td align="left">MOV        DH, 0x4</td></tr><tr><td align="left">MOV        EDI, 0x5ECCB77C</td></tr><tr><td align="left">SCASD      </td></tr><tr><td align="left">XOR        BH, BYTE PTR [ESI]</td></tr><tr><td align="left">INC        EBP</td></tr><tr><td align="left">RET        0xDF6C</td></tr></table>> ];
+8772607370085 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B290</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x70</td></tr><tr><td align="left">JMP        loc_00000000080480E5:0x080480e5</td></tr></table>> ];
+8772607365841 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1DD</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x33</td></tr><tr><td align="left">JMP        loc_0000000008049EAE:0x08049eae</td></tr></table>> ];
+8772607379945 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B21A</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x63</td></tr><tr><td align="left">JMP        loc_0000000008048644:0x08048644</td></tr></table>> ];
+8772607005437 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2CD</td></tr><tr><td align="left">DEC        ECX</td></tr><tr><td align="left">CMP        ECX, 0x0</td></tr><tr><td align="left">JGE        loc_000000000804B2C1:0x0804b2c1</td></tr></table>> ];
+8772607447921 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2F0</td></tr><tr><td align="left">POP        EAX</td></tr><tr><td align="left">CMP        EAX, 0x2</td></tr><tr><td align="left">JNZ        loc_0000000008049454:0x08049454</td></tr></table>> ];
+8772607224709 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B1B5</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x6C</td></tr><tr><td align="left">JMP        loc_000000000804906C:0x0804906c</td></tr></table>> ];
+8772607447973 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B2FA</td></tr><tr><td align="left">POP        EBX</td></tr><tr><td align="left">POP        EBX</td></tr><tr><td align="left">MOV        ECX, 0x0</td></tr><tr><td align="left">MOV        EAX, 0x0</td></tr><tr><td align="left">JMP        loc_000000000804AC5A:0x0804ac5a</td></tr></table>> ];
+8772607028093 [
+shape="Mrecord" fontname="Courier New"label =<<table border="0" cellborder="0" cellpadding="3"><tr><td colspan="2" align="center" bgcolor="grey">loc_000000000804B151</td></tr><tr><td align="left">INC        ECX</td></tr><tr><td align="left">XOR        BYTE PTR [EBX+ECX], 0x21</td></tr><tr><td align="left">JMP        loc_00000000080482A7:0x080482a7</td></tr></table>> ];
+8772607128837 -> 8772607115985[color="blue"];
+8772607292981 -> 8772607256089[color="blue"];
+8772607452717 -> 8772607452805[color="red"];
+8772607452717 -> 8772607452809[color="limegreen"];
+8772607010341 -> 8772607010529[color="blue"];
+8772606978081 -> 8772606978121[color="blue"];
+8772607434893 -> 8772607421573[color="blue"];
+8772607421573 -> 8772607379945[color="blue"];
+8772607074841 -> 8772607083269[color="blue"];
+8772607115985 -> 8772607092609[color="blue"];
+8772607092609 -> 8772607074841[color="blue"];
+8772607256089 -> 8772607229321[color="blue"];
+8772607412169 -> 8772607398329[color="blue"];
+8772607398329 -> 8772607370085[color="blue"];
+8772607028093 -> 8772607005353[color="blue"];
+8772607005353 -> 8772606957641[color="blue"];
+8772607379945 -> 8772607365841[color="blue"];
+8772607365841 -> 8772607338769[color="blue"];
+8772606957641 -> 8772607005437[color="red"];
+8772607005437 -> 8772606957641[color="limegreen"];
+8772607005437 -> 8772607010341[color="red"];
+8772607046501 -> 8772607028093[color="blue"];
+8772607447921 -> 8772607452717[color="limegreen"];
+8772607447921 -> 8772607447973[color="red"];
+8772607447973 -> 8772607412169[color="blue"];
+8772606978121 -> 8772606978205[color="blue"];
+8772607370085 -> 8772607315453[color="blue"];
+8772607315453 -> 8772607292981[color="blue"];
+8772607224709 -> 8772607210717[color="blue"];
+8772607142701 -> 8772607128977[color="blue"];
+8772607128977 -> 8772607434893[color="blue"];
+8772607229321 -> 8772607169945[color="blue"];
+8772607169945 -> 8772607142701[color="blue"];
+8772607261277 -> 8772607224709[color="blue"];
+8772606957641 -> 8772606992213[color="limegreen"];
+8772606992213 -> 8772606978081[color="blue"];
+8772607083269 -> 8772607065113[color="blue"];
+8772607065113 -> 8772607046501[color="blue"];
+8772607210717 -> 8772607156069[color="blue"];
+8772607156069 -> 8772607128837[color="blue"];
+8772607338769 -> 8772607311805[color="blue"];
+8772607311805 -> 8772607261277[color="blue"];
+}

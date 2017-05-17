@@ -3,7 +3,7 @@ from miasm2.analysis.binary import Container
 from miasm2.analysis.machine import Machine
 from miasm2.core.graph import DiGraphSimplifier, MatchGraphJoker
 
-container = Container.from_stream(open('dump.bin'))
+container = Container.from_stream(open('dump2.bin'))
 bin_stream = container.bin_stream
 
 #machine name = container.arch
@@ -16,7 +16,7 @@ mdis = machine.dis_engine(bin_stream)
 #https://github.com/cea-sec/miasm/pull/309
 blocks = mdis.dis_multibloc(container.entry_point)
 
-#open('AsmCFG.dot','w+').write(blocks.dot())
+#open('AsmCFG_input.dot','w+').write(blocks.dot())
 
 
 '''
@@ -35,7 +35,7 @@ filter_block = lambda block: (len(block.lines)==2 and \
 
 parent = MatchGraphJoker(restrict_in=False, filt=filter_block, name='root')
 
-middle = MatchGraphJoker(filt=lambda block: (block.lines[0].name == 'XOR'), name='middle')
+middle = MatchGraphJoker(restrict_in=False, filt=lambda block: (block.lines[0].name == 'XOR'), name='middle')
 
 last = MatchGraphJoker(restrict_out=False, name='end')
 
@@ -62,6 +62,16 @@ def pass_remove_junkcode(dgs,graph):
 
 dgs = DiGraphSimplifier()
 dgs.enable_passes([pass_remove_junkcode])
-new_graph = dgs.apply_simp(blocks)
+#new_graph = dgs.apply_simp(blocks)
+new_graph = dgs(blocks)
 
-open('JunkRemoved.dot','w').write(new_graph.dot())
+flag = []
+
+for block in new_graph.walk_depth_first_forward(new_graph.heads()[0]):
+	if len(block.lines) == 3 and "XOR" in block.lines[1].name:
+		key = block.lines[1].args[1]
+		flag.append(key)
+
+print 'flag is: '+''.join(chr(i) for i in flag)
+
+#open('JunkRemoved_middle_restrictin_dump2.dot','w').write(new_graph.dot())
